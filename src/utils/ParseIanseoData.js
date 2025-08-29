@@ -327,9 +327,6 @@ export default function (data, resultTypes) {
       }
       if (data[row][teamHeaders.sport_id_c]) {
         result["sport_id_c"] = data[row][teamHeaders.sport_id_c];
-        category = "Team".concat(category);
-      } else {
-        category = "Mixed".concat(category);
       }
       result["category"] = category;
       let teamCount = results.filter(
