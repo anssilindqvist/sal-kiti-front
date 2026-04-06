@@ -30,7 +30,7 @@ exports[`AthleteResults.vue renders result list 1`] = `
             aria-busy="false"
             aria-colcount="4"
             class="table b-table table-hover table-sm"
-            id="__BVID__26"
+            id="__BVID__34"
             role="table"
           >
             <!---->
@@ -219,7 +219,7 @@ exports[`AthleteResults.vue renders result list 1`] = `
             aria-busy="false"
             aria-colcount="6"
             class="table b-table table-hover table-sm"
-            id="__BVID__36"
+            id="__BVID__44"
             role="table"
           >
             <!---->
@@ -398,6 +398,112 @@ exports[`AthleteResults.vue renders result list 1`] = `
             </tbody>
             <!---->
           </table>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col-lg-6 col-12"
+    >
+      <div>
+        <h3>
+          result.chart_timeline
+        </h3>
+         
+        <fieldset
+          class="form-group"
+          id="__BVID__24"
+        >
+          <legend
+            class="bv-no-focus-ring col-form-label pt-0"
+            id="__BVID__24__BV_label_"
+            tabindex="-1"
+          >
+            competition.type
+          </legend>
+          <div>
+            <select
+              class="custom-select"
+              id="__BVID__25"
+            >
+              <option
+                value=""
+              >
+                result.all_types
+              </option>
+              <option
+                value="50MC"
+              >
+                50m Competition
+              </option>
+            </select>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </fieldset>
+         
+        <div>
+          <div
+            class=""
+          >
+            <canvas />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="col-lg-6 col-12"
+    >
+      <div>
+        <h3>
+          result.chart_best
+        </h3>
+         
+        <fieldset
+          class="form-group"
+          id="__BVID__28"
+        >
+          <legend
+            class="bv-no-focus-ring col-form-label pt-0"
+            id="__BVID__28__BV_label_"
+            tabindex="-1"
+          >
+            competition.type
+          </legend>
+          <div>
+            <select
+              class="custom-select"
+              id="__BVID__29"
+            >
+              <option
+                value=""
+              >
+                result.all_types
+              </option>
+              <option
+                value="50MC"
+              >
+                50m Competition
+              </option>
+            </select>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </fieldset>
+         
+        <div>
+          <div
+            class=""
+          >
+            <canvas />
+          </div>
         </div>
       </div>
     </div>

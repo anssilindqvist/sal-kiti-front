@@ -17,6 +17,14 @@
         <AthleteRecordsList v-if="results.length > 0" :results="results" />
       </b-col>
     </b-row>
+    <b-row v-if="results.length > 0">
+      <b-col cols="12" lg="6">
+        <AthleteResultsTimeline :results="results" />
+      </b-col>
+      <b-col cols="12" lg="6">
+        <AthleteResultsBestDevelopment :results="results" />
+      </b-col>
+    </b-row>
     <b-row v-if="results">
       <b-col>
         <AthleteResultsList :results="results" />
@@ -41,13 +49,17 @@ import errorParser from "../utils/ErrorParser";
 import AthletePersonalBestList from "./AthletePersonalBestList";
 import AthleteRecordsList from "./AthleteRecordsList";
 import AthleteResultsList from "./AthleteResultsList";
+import AthleteResultsTimeline from "./AthleteResultsTimeline";
+import AthleteResultsBestDevelopment from "./AthleteResultsBestDevelopment";
 
 export default {
   name: "AthleteResults",
   components: {
     AthletePersonalBestList,
     AthleteRecordsList,
-    AthleteResultsList
+    AthleteResultsList,
+    AthleteResultsTimeline,
+    AthleteResultsBestDevelopment
   },
   data() {
     return {

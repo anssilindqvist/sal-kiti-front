@@ -151,7 +151,10 @@
     "personal_best": "Personal best",
     "kneeling": "Kneeling",
     "standing": "Standing",
-    "prone": "Prone"
+    "prone": "Prone",
+    "chart_timeline": "Result Timeline",
+    "chart_best": "Best Result Development",
+    "all_types": "All types"
   },
   "search": {
     "search": "Search",

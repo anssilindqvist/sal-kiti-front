@@ -150,7 +150,10 @@
     "personal_best": "Parhaat tulokset",
     "kneeling": "Polvi",
     "standing": "Pysty",
-    "prone": "Makuu"
+    "prone": "Makuu",
+    "chart_timeline": "Tulosaikajana",
+    "chart_best": "Parhaiden tulosten kehitys",
+    "all_types": "Kaikki tyypit"
   },
   "search": {
     "search": "Haku",
