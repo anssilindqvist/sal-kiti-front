@@ -121,3 +121,32 @@ Defined in `.env.development`:
 8. **Lazy-load route components** with `() => import(/* webpackChunkName */ "...")`
 9. **Keep Vuex minimal** - only global state belongs there; use component-local state for forms/lists
 10. **Match existing patterns** - look at similar components before creating new ones
+
+## Known Issues
+
+- **xlsx dependency**: `xlsx` is fetched from a CDN (`cdn.sheetjs.com`) that may return 403. Workaround: temporarily remove `xlsx` from `package.json`, run `npm install`, then restore the line. The xlsx package is only used in import components (`ResultImport.vue`, `AthleteImport.vue`), not in the statistics/charting side.
+- **Pre-existing test failures**: 3 test suites fail because of the missing xlsx module. These are not regressions — all 85 actual tests pass.
+
+## Current Work in Progress
+
+**Branch**: `claude/add-claude-documentation-zG8TN`
+
+### What was done
+
+1. **CLAUDE.md** — Created this file documenting the codebase.
+
+2. **Athlete result charts** — Added two filterable line charts to the athlete results page (`/athlete/:athlete_id`):
+   - `src/components/AthleteResultsTimeline.vue` — All results plotted over time (date vs result value). Filterable by competition type (Tyyppi) dropdown.
+   - `src/components/AthleteResultsBestDevelopment.vue` — Running personal best progression over time. Stepped line that only plots new PB points. Also filterable by type.
+   - Both are wired into `src/components/AthleteResults.vue` in a side-by-side `b-row` above the results table.
+   - Added `chart.js@^3.9.1` and `vue-chartjs@^4.1.2` as dependencies.
+   - Added translations (`chart_timeline`, `chart_best`, `all_types`) to both `en.json` and `fi.json` under the `result` key.
+   - Added canvas mock in `tests/unit/TestSetup.js` for chart.js in jsdom.
+   - Updated `AthleteResults.spec.js` snapshot.
+
+### What to do next
+
+- **Test the charts visually** against a real backend (production API or local). The charts need athlete result data to render — navigate to `/athlete/<id>` for an athlete with multiple results.
+- If CORS is an issue with the production API, set up a CORS proxy and point `VUE_APP_BASE_URL` at it.
+- The statistics side of the app (routes under `/statistics/`, `/records/`, `/divari/`) uses read-only GET endpoints that do not require authentication. Only `.env.production` with the correct `VUE_APP_BASE_URL` is needed to build for production.
+- Consider adding more chart types or filters (e.g., filter by category/series, or group by year).
